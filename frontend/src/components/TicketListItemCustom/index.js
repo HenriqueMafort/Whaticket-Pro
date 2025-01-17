@@ -137,13 +137,13 @@ const useStyles = makeStyles((theme) => ({
 
   acceptButton: {
     position: "absolute",
-    right: "108px",
+    right: "0px",
   },
 
 
   acceptButton: {
     position: "absolute",
-    left: "50%",
+    right: '0px',
   },
 
 
@@ -463,12 +463,12 @@ const useStyles = makeStyles((theme) => ({
           {ticket.status !== "pending" ?
             <Avatar
               style={{
-                marginTop: "-20px",
-                marginLeft: "-3px",
-                width: "55px",
-                height: "55px",
+                marginTop: "-0px",
+                marginLeft: "0px",
+                width: "60px",
+                height: "60px",
                 borderRadius: "10%",
-                backgroundColor: generateColor(ticket?.contact?.number),
+                //backgroundColor: generateColor(ticket?.contact?.number),
               }}
               src={ticket?.contact?.profilePicUrl}>
               {getInitials(ticket?.contact?.name || "")}
@@ -476,12 +476,12 @@ const useStyles = makeStyles((theme) => ({
             :
             <Avatar
               style={{
-                marginTop: "-30px",
+                marginTop: "0px",
                 marginLeft: "0px",
-                width: "50px",
-                height: "50px",
+                width: "60px",
+                height: "60px",
                 borderRadius: "10%",
-                backgroundColor: generateColor(ticket?.contact?.number),
+                //backgroundColor: generateColor(ticket?.contact?.number),
               }}
               src={ticket?.contact?.profilePicUrl}>
               {getInitials(ticket?.contact?.name || "")}
@@ -542,7 +542,7 @@ const useStyles = makeStyles((theme) => ({
                 )}
 
                 <span style={{ marginTop: 4, }} className={classes.secondaryContentSecond} >
-                  {ticket?.whatsapp?.name ? <Badge className={classes.connectionTag}>{ticket?.whatsapp?.name?.toUpperCase()}</Badge> : <br></br>}
+                  {/* {ticket?.whatsapp?.name ? <Badge className={classes.connectionTag}>{ticket?.whatsapp?.name?.toUpperCase()}</Badge> : <br></br>} */}
                   {ticketUser ? <Badge style={{ backgroundColor: "#000000" }} className={classes.connectionTag}>{ticketUser}</Badge> : <br></br>}				  
                   <Badge style={{ backgroundColor: ticket.queue?.color || "#7c7c7c" }} className={classes.connectionTag}>{ticket.queue?.name?.toUpperCase() || "SEM FILA"}</Badge>
                 </span>
@@ -604,14 +604,16 @@ const useStyles = makeStyles((theme) => ({
   {ticket.status === "pending" && (
     <>
       <ButtonWithSpinner
-        style={{
-          backgroundColor: 'green',
+         style={{
+          backgroundColor: '#1f1f89',
           color: 'white',
           padding: '0px',
-          bottom: '17px',
-          borderRadius: '0px',
-          left: '8px',
-          fontSize: '0.6rem'
+          height: '25px',
+          right: '220px',
+          borderRadius: '5px',
+          bottom: '10px',
+          fontSize: '10px',
+          position: 'absolute'
         }}
         variant="contained"
         className={classes.acceptButton}
@@ -621,7 +623,7 @@ const useStyles = makeStyles((theme) => ({
       >
         {i18n.t("ticketsList.buttons.accept")}
       </ButtonWithSpinner>
-
+{/* 
       <ButtonWithSpinner
         style={{
           backgroundColor: 'red',
@@ -639,7 +641,7 @@ const useStyles = makeStyles((theme) => ({
         onClick={e => handleCloseTicket(ticket.id)}
       >
         {i18n.t("ticketsList.buttons.closed")}
-      </ButtonWithSpinner>
+      </ButtonWithSpinner> */}
     </>
   )}
 
@@ -685,20 +687,24 @@ const useStyles = makeStyles((theme) => ({
     </>
   )}
 
+
+
   {ticket.status !== "closed" && ticket.status !== "pending" && ticket.status !== "attending" && (
+    //atendendo
     <>
       <ButtonWithSpinner
         style={{
-          backgroundColor: 'blue',
+          backgroundColor: '#1f1f89',
           color: 'white',
           padding: '0px',
-          bottom: '17px',
+          height: '25px',
+          right: '0px',
           borderRadius: '0px',
-          left: '8px',
-          fontSize: '0.6rem'
+          fontSize: '10px',
+          position: 'absolute'
         }}
         variant="contained"
-        className={classes.acceptButton}
+        //className={classes.acceptButton}
         size="small"
         loading={loading}
         onClick={e => handleOpenTransferModal()}
@@ -706,7 +712,7 @@ const useStyles = makeStyles((theme) => ({
         {i18n.t("ticketsList.buttons.transfer")}
       </ButtonWithSpinner>
 
-      <ButtonWithSpinner
+      {/* <ButtonWithSpinner
         style={{
           backgroundColor: 'red',
           color: 'white',
@@ -723,7 +729,7 @@ const useStyles = makeStyles((theme) => ({
         onClick={e => handleCloseTicket(ticket.id)}
       >
         {i18n.t("ticketsList.buttons.closed")}
-      </ButtonWithSpinner>
+      </ButtonWithSpinner> */}
     </>
   )}
 

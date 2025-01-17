@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   noTicketsText: {
-    textAlign: "center",
+    textAlign: "right",
     color: "rgb(104, 121, 146)",
     fontSize: "14px",
     lineHeight: "1.4",
