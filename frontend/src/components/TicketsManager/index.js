@@ -155,6 +155,15 @@ const TicketsManager = () => {
     }
   };
 
+  const applyTabStyle = () => { 
+    if (user.profile.toUpperCase() === "ADMIN" || user.profile.toUpperCase() === "GESTOR"){
+    return { display: "block" };
+    } else {
+    return { display: "none" };
+    }
+    };
+
+
   return (
     <Paper elevation={0} variant="outlined" className={classes.ticketsWrapper}>
       <NewTicketModal
@@ -196,6 +205,7 @@ const TicketsManager = () => {
             classes={{ root: classes.tab }}
           />
           <Tab
+            style={applyTabStyle()}
             value={"pending"}
             icon={<HourglassEmptyRounded />}
             label={

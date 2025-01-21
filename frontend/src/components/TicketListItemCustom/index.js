@@ -509,6 +509,9 @@ const useStyles = makeStyles((theme) => ({
                       onClick={() => setOpenTicketMessageDialog(true)}
                       fontSize="small"
                       style={{
+                        position: "absolute",
+                        right: 83,
+                        top: 58,
                         color: blue[700],
                         cursor: "pointer",
                         marginLeft: 10,
@@ -608,8 +611,8 @@ const useStyles = makeStyles((theme) => ({
           backgroundColor: '#1f1f89',
           color: 'white',
           padding: '0px',
-          height: '25px',
-          right: '220px',
+          height: '29px',
+          right: '10px',
           borderRadius: '5px',
           bottom: '10px',
           fontSize: '10px',
@@ -696,10 +699,10 @@ const useStyles = makeStyles((theme) => ({
         style={{
           backgroundColor: '#1f1f89',
           color: 'white',
-          padding: '0px',
-          height: '25px',
-          right: '0px',
-          borderRadius: '0px',
+          padding: '3px',
+          height: '29px',
+          right: '10px',
+          borderRadius: '5px',
           fontSize: '10px',
           position: 'absolute'
         }}

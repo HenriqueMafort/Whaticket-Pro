@@ -17,6 +17,15 @@ const rules = {
 			"connections-page:editOrDeleteConnection"
 		],
 	},
+
+	gestor: {
+		static: [
+			"drawer-superv-items:view",
+			"tickets-manager:showall",
+			"tickets:showQueue",
+			"notification-popOver:showall",
+		],
+	},
 };
 
 export default rules;
